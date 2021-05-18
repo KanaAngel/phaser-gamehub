@@ -76,10 +76,19 @@ function createTerrainAt(x, y) {
   if (x < 1 || y < 1 || x > worldSize - 1 || y > worldSize - 1) {
     spriteIndex = 6;
   } else {
-    var left = world[x - 1][y] == 1;
-    var top = world[x][y + 1] == 1;
-    var right = world[x + 1][y] == 1;
-    var bottom = world[x][y - 1] == 1;
+    var left = world[x - 1][y];
+    var top = world[x][y + 1];
+    var right = world[x + 1][y];
+    var bottom = world[x][y - 1];
+
+    var combinedValue = left + top + right + bottom;
+
+    if (combinedValue > 1) {
+      spriteIndex = 6;
+    } else {
+      if (top > 0)
+      if (left > 0)
+    }
 
     console.log(spriteIndex);
   }
