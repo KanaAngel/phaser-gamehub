@@ -26,10 +26,7 @@ var worldSize = 25;
 var world = [];
 
 function preload() {
-  console.log("preload()");
   var texture = this.load.spritesheet('terrain', 'assets/sprites/terrain.png', { frameWidth: 16, frameHeight: 16 });
-  console.log(texture);
-
   scene = this;
 }
 
@@ -49,8 +46,6 @@ function worldObj() {
 }
 
 function newTerrain(threshold = 0.5) {
-  console.log("newTerrain()");
-
   for (var i = 0; i < worldSize; i++)
     for (var j = 0; j < worldSize; j++) {
       if (Math.random() > threshold) world[i][j] = 0; // 1 = land
@@ -61,8 +56,6 @@ function newTerrain(threshold = 0.5) {
 }
 
 function renderTerrain() {
-  console.log("renderTerrain()");
-
   for (var i = 0; i < worldSize; i++)
     for (var j = 0; j < worldSize; j++) {
       if (world[i][j] == 1) createTerrainAt(i, j);
@@ -79,7 +72,6 @@ function createTerrainAt(x, y) {
   var bottom = y == worldSize - 1 || world[x][y + 1] == 1;
 
   var combinedValue = left + top + right + bottom;
-  console.log(combinedValue);
 
   if (!left && !top && !right && !bottom) spriteIndex = 1;
   if (!left && top && !right && !bottom) spriteIndex = 2;
