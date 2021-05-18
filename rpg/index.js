@@ -23,7 +23,7 @@ var scene;
 
 function preload() {
   console.log("preload()");
-  var texture = this.load.spritesheet('terrain', 'assets/sprites/terrain.png', { frameWidth: 16, frameHeight: 16 });
+  var texture = this.load.spritesheet('terrain', 'https://raw.githubusercontent.com/KanaAngel/phaser-gamehub/main/rpg/assets/sprites/terrain.png', { frameWidth: 16, frameHeight: 16 });
   console.log(texture);
 
   scene = this;
