@@ -5,7 +5,7 @@ var mainScene = new Phaser.Class({
   },
   preload: function() {
     this.load.spritesheet('terrain', 'assets/sprites/terrain.png', { frameWidth: 16, frameHeight: 16 });
-
+    scene = this;
   },
   update: function () {
 

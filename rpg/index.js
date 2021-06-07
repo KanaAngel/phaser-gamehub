@@ -17,6 +17,8 @@ var config = {
 var game = new Phaser.Game(config);
 Phaser.Scene.call(this, mainScene);
 
+var scene;
+
 var worldSize = 25;
 
 var world = [];
