@@ -8,12 +8,14 @@ var mainScene = new Phaser.Class({
 
   },
   update: function () {
+
+  },
+  create: function () {
     worldObj();
     newTerrain();
 
     addInputEvents();
-  },
-  create: mainCreate
+  }
 });
 
 function worldObj() {
@@ -78,8 +80,4 @@ function createWaterAt(x, y) {
 
 function addInputEvents() {
   var spaceInput = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-}
-
-function mainUpdate() {
-
 }
