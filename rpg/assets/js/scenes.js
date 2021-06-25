@@ -1,5 +1,6 @@
 var space;
-var mainScene = new Phaser.Class({
+
+var worldScene = new Phaser.Class({
   initialize: function() {
     console.log("Loaded main scene.");
   },
@@ -15,6 +16,8 @@ var mainScene = new Phaser.Class({
     newTerrain();
 
     addInputEvents();
+
+    console.log("create();");
   }
 });
 
