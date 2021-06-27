@@ -18,7 +18,7 @@ export default class GameScene extends Phaser.Scene {
     this.physics.world.setBounds(0, 0, this.worldSize * 64, this.worldSize * 64);
 
     // Determine a spawnpoint.
-    var spawnpoint = getSpawnpoint();
+    var spawnpoint = this.getSpawnpoint();
 
     // Spawn the player at the spawnpoint.
     this.player = this.physics.add.image(spawnpoint.x, spawnpoint.y, 'characters', 0);
@@ -116,6 +116,8 @@ export default class GameScene extends Phaser.Scene {
         // Do the fun little step animation. (Temporary)
         this.player.scaleX *= -1;
       }
+
+      this.timeLastFrameUpdate = Date.now();
     }
   }
 
